@@ -1,5 +1,6 @@
 from .core import Scene
 from .empty_scene import EmptyScene
+from .randomgoal_scene import RandomGoalScene
 
 
 _scene_classes = {}

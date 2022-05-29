@@ -59,6 +59,8 @@ class VecObsNormWrapper(VecEnvWrapper):
             self.find_norm_params()
         obs = nest.map_structure(np.asarray, obs)
         obs = nest.map_structure(np.float32, obs)
+        self.mean['observation']['goal_dist'] = self.mean['observation']['disk'].copy()
+        self.std['observation']['goal_dist'] = self.std['observation']['disk'].copy()
         if not nest.has_same_structure(self.mean, obs):
             raise ValueError("mean and obs do not have the same structure!")
 
